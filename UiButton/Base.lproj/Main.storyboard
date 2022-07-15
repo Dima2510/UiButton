@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,13 +15,54 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Правда или действие?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GbP-a8-SBX">
+                                <rect key="frame" x="16" y="16" width="382" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYP-T4-rbl">
+                                <rect key="frame" x="16" y="534" width="145" height="109"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="109" id="COz-Ig-Acx"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="145" id="ztV-eY-o8G"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Правда">
+                                    <color key="titleColor" red="0.92128556969999997" green="0.067541062809999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleShadowColor" red="0.92128556969999997" green="0.47491242659999999" blue="0.14164876940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="trueAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p8O-5l-3fD"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dYP-T4-rbl" secondAttribute="bottom" constant="93" id="OC3-Do-t16"/>
+                            <constraint firstItem="GbP-a8-SBX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="UZd-Nh-5cw"/>
+                            <constraint firstItem="dYP-T4-rbl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Y3p-74-wGb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GbP-a8-SBX" secondAttribute="trailing" constant="16" id="iei-xK-mHs"/>
+                            <constraint firstItem="GbP-a8-SBX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="qbZ-HT-UDl"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="GbP-a8-SBX" id="CX6-tV-JSk"/>
+                        <outlet property="trueButton" destination="dYP-T4-rbl" id="tjv-Mc-HAi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="69.293478260869577"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
